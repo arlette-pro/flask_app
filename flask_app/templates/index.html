@@ -1,0 +1,41 @@
+
+    {% extends 'base.html'%}
+
+    {% block content %}
+        <h1>Welcome to our First Flask + MySQL Application</h1>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">FriendId</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Occupation</th>
+                <th scope="col">Created on</th>
+                <th scope="col">Last update</th>
+                <!-- added to the table for actions -->
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for friend in friends%}
+                <tr>
+                    <th scope="row">{{friend.id}}</th>
+                    <td>{{friend.first_name}}</td>
+                    <td>{{friend.last_name}}</td>
+                    <td>{{friend.occupation}}</td>
+                    <td>{{friend.created_at}}</td> 
+                    <td>{{friend.updated_at}}</td> 
+                    <!-- for delete, edit and show details -->
+                    <td>
+                      <a href="/friend/details/{{friend.id}}">details</a>
+                      <a href="/friend/edit/{{friend.id}}">edit</a>
+                      <a href="/friend/remove/{{friend.id}}">delete</a>
+                    </td> 
+                </tr>
+                {% endfor%}
+            
+            </tbody>
+          </table>
+
+    {% endblock %}
+

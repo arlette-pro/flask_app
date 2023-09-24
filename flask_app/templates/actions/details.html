@@ -1,0 +1,14 @@
+<!-- show details on table -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1 class="text-center"> details of friends with id = : {{details.id}}</h1>
+    <p>FriendID: {{details.id}}</p>
+    <p>First_name: {{details.first_name}}</p>
+    <p>Last_name: {{details.last_name}}</p>
+    <p>Occupation: {{details.occupation}}</p>
+    <p>Created_at: {{details.created_at}}</p>
+    <p>Last update: {{details.updated_at}}</p>
+  
+{% endblock %}

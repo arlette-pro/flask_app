@@ -1,0 +1,27 @@
+<!-- Edit friends -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="mt-5 text-center">Update a Friend</h1>
+<form action="/friend/update" method="POST">
+    <input type="hidden" name="id" value="{{details.id}}">
+   <div>
+    <label for="fname">First Name:</label>
+    <input type="text" name="fname" value="{{details.first_name}}">
+   </div>
+   <br>
+   <div>
+    <label for="lname">Last Name:</label>
+    <input type="text" name="lname" value="{{details.last_name}}">
+   </div>
+   <br>
+   <div>
+    <label for="occ" >Occupation:</label>
+    <input type="text" name="occ" value="{{details.occupation}}">
+   </div>
+   <br>
+    <input type="submit" value="Update Details">
+</form> 
+
+{% endblock %}
